@@ -1,116 +1,174 @@
-import React, { useState } from "react";
-import {
-  TextField,
-  Button,
-  Typography,
-  Paper,
-  Box,
-  Container,
-} from "@mui/material";
-import { Link } from "react-router-dom";
+import React, { useState, useRef } from "react";
+import { Button, Typography } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "./AuthContext";
+
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { user, dispatch } = useContext(AuthContext);
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+  const navigate = useNavigate();
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const [error, setError] = useState("");
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Email:", email);
-    console.log("Password:", password);
+    try {
+      const response = await axios.get("http://localhost:4000/users");
+      const users = response.data;
+      const foundUser = users.find(
+        (user) =>
+          user.email === emailRef.current.value &&
+          user.password === passwordRef.current.value
+      );
+      dispatch({ type: "LOGIN", payload: foundUser });
+      if (foundUser) {
+        navigate("/userpage");
+      } else {
+        setError("Invalid email or password. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error fetching or comparing data:", error);
+      setError("Error while processing. Please try again.");
+    }
   };
 
   return (
-    <Container
-      maxWidth="100%"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <Paper
-        style={{
-          textAlign: "center",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: 10,
-          maxWidth: 500,
-          margin: "auto",
-          marginTop: 130,
-          backgroundColor: "#7439db",
-          backgroundImage:
-            'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYiRjZ_iuOepnNoqhFs4gXogvjwrHKTh4kiw&usqp=CAU")',
-        }}
+    <div className="login">
+      <Typography
+        component="h3"
+        variant="h1"
+        color="white"
+        letterSpacing={3}
+        display={"flex"}
+        justifyContent={"flex-start"}
+        justifyItems={"flex-end"}
+        className="userlogin"
       >
-        <div style={{ paddding: "5", borderRadius: "10" }}>
-          <center>
-            {" "}
-            <Typography component="h3" variant="h3">
-              USER LOGIN
-            </Typography>
-            <p>Please login to continue</p>
-          </center>
-          <form onSubmit={handleSubmit}>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              type="email"
-              value={email}
-              onChange={handleEmailChange}
-              required
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              fullWidth
-              id="password"
-              label="Password"
-              name="password"
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
-              required
-            />
-            <br></br>
-            <br></br>
-            <Box display="flex" justifyContent="center" alignItems="center">
-              <Button variant="contained" style={{ backgroundColor: "black" }}>
-                <Link
-                  to="/home"
-                  style={{ textDecoration: "none", color: "white" }}
-                >
-                  LOGIN
-                </Link>
-              </Button>
-            </Box>
-            <br></br>
-            <br></br>
-            <Typography>
-              Don't have an account?&emsp;
-              <Link to="/signup">Register</Link>
-            </Typography>
-          </form>
-        </div>
-      </Paper>
-    </Container>
+        USER LOGIN
+      </Typography>
+
+      <form onSubmit={handleSubmit}>
+        <p>Please login to continue</p>
+        <label>Email Address</label>
+        <input id="email" name="email" type="email" ref={emailRef} required />
+        <label>Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          ref={passwordRef}
+          required
+        />
+        <center>
+          <Button className="button" type="submit" style={{ color: "white" }}>
+            LOGIN
+          </Button>
+        </center>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <Typography paddingLeft={4}>
+          Don't have an account?&emsp;
+          <Link to="/signup" style={{ textDecoration: "none", color: "black" }}>
+            Register
+          </Link>
+        </Typography>
+      </form>
+    </div>
   );
 };
 
 export default Login;
+
+// import React, { useState } from "react";
+// import { Button, Typography } from "@mui/material";
+// import { Link, useHistory } from "react-router-dom";
+// import { useEffect } from "react";
+// import axios from "axios";
+// import { useRef } from "react";
+// const Login = () => {
+//   const history = useHistory();
+//   const [data, setData] = useRef({
+//     email: "",
+//     password: "",
+//   });
+//   const [error, setError] = useState("");
+//   const handleInput = (e) => {
+//     setData({ ...data, [e.target.name]: e.target.value });
+//   };
+//   useEffect(() => {
+//     axios
+//       .get(" http://localhost:4000/users")
+//       .then((res) => console.log(res.data))
+//       .catch((err) => console.log(err));
+//     if (data.email === res.data.email && data.password === res.data.password) {
+//       history.push("/userpage");
+//     } else {
+//       setError("Invalid details");
+//     }
+//   }, []);
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     const { email, password } = data;
+//     console.log("Email:", data.email);
+//     console.log("Password:", data.password);
+//   };
+
+//   return (
+//     <div className="login">
+//       <form onSubmit={handleSubmit}>
+//         <center>
+//           <Typography
+//             component="h3"
+//             variant="h3"
+//             color="white"
+//             letterSpacing={3}
+//             marginTop={2}
+//           >
+//             USER LOGIN
+//           </Typography>
+//           <p>Please login to continue</p>
+//         </center>
+//         <label>Email Address</label>
+//         <input
+//           id="email"
+//           name="email"
+//           type="email"
+//           value={data.email}
+//           onChange={handleInput}
+//           required
+//         />
+//         <label>Password</label>
+//         <input
+//           id="password"
+//           label="Password"
+//           name="password"
+//           type="password"
+//           value={data.password}
+//           onChange={handleInput}
+//           required
+//         />
+//         <center>
+//           <Button className="button" type="submit" style={{ color: "white" }}>
+//             LOGIN
+//             {/* <Link to="/home" style={{ textDecoration: "none", color: "white" }}>
+//               LOGIN
+//             </Link> */}
+//           </Button>
+//         </center>
+//         <p>Forgot password?</p>
+//         <Typography paddingLeft={4}>
+//           Don't have an account?&emsp;
+//           <Link to="/signup" style={{ textDecoration: "none", color: "black" }}>
+//             Register
+//           </Link>
+//         </Typography>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default Login;

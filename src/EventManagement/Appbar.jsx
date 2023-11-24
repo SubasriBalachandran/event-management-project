@@ -10,11 +10,13 @@ import {
   Button,
   MenuItem,
 } from "@mui/material";
-
+import { useContext, useState } from "react";
+import { AuthContext } from "./AuthContext";
 import HomeIcon from "@mui/icons-material/Home";
 const pages = ["About", "Events", "Pricing", "Jobs+"];
 
 export default function Appbar() {
+  const { user, dispatch } = useContext(AuthContext);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleCloseNavMenu = () => {
@@ -24,7 +26,7 @@ export default function Appbar() {
     <AppBar
       position="static"
       style={{
-        backgroundColor: "DarkSeaGreen",
+        backgroundColor: "LavenderBlush",
       }}
     >
       <Container maxWidth="xl">
@@ -37,16 +39,15 @@ export default function Appbar() {
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              color: "green",
+              fontSize: 35,
+              color: "HotPink",
             }}
           >
             EventsHub!
           </Typography>
-
           <Link to="/home">
             <HomeIcon style={{ color: "black" }}> </HomeIcon>
           </Link>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <Menu
               id="menu-appbar"
@@ -84,43 +85,48 @@ export default function Appbar() {
               </Button>
             ))}
           </Box>
-          <Box
-            display="flex"
-            justifyContent="flex-end"
-            alignItems="center"
-            sx={{ flexGrow: 1 }}
-          >
+          {user === null ? (
             <Button
               variant="outlined"
-              style={{ backgroundColor: "white", color: "green" }}
+              style={{
+                backgroundColor: "white",
+                borderColor: "pink",
+              }}
             >
               <nav>
                 <CustomLink
                   to="/login"
-                  style={{ textDecoration: "none", color: "green" }}
+                  style={{ textDecoration: "none", color: "blue" }}
                 >
                   LOGIN
                 </CustomLink>
               </nav>
             </Button>
-          </Box>
-          <Box
-            display="flex"
-            justifyContent="flex-end"
-            alignItems="center"
-            sx={{ flexGrow: 0 }}
+          ) : (
+            <>
+              <Typography>{user.name}</Typography>
+              <Button
+                color="inherit"
+                onClick={() => dispatch({ type: "LOGOUT" })}
+              >
+                Logout
+              </Button>
+            </>
+          )}
+          <Button
+            style={{
+              backgroundColor: "pink",
+            }}
           >
-            <Button variant="contained" color="success">
-              <nav>
-                <CustomLink
-                  to="/signup"
-                  style={{ textDecoration: "none", color: "white" }}
-                >
-                  SIGN UP
-                </CustomLink>
-              </nav>
-            </Button>
-          </Box>
+            <nav>
+              <CustomLink
+                to="/signup"
+                style={{ textDecoration: "none", color: "blue" }}
+              >
+                SIGN UP
+              </CustomLink>
+            </nav>
+          </Button>
         </Toolbar>
       </Container>
     </AppBar>

@@ -1,0 +1,68 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "suba",
+      "email": "abddc@gmail.com",
+      "password": "qwert",
+      "state": "Tamilnadu",
+      "phone": 9383759393
+    },
+    {
+      "id": 2,
+      "name": "subbha",
+      "email": "avvdsbc@gmail.com",
+      "password": "qwervsdt",
+      "state": "Tamilnadu",
+      "phone": 9383759393
+    },
+    {
+      "id": 3,
+      "name": "subha",
+      "email": "abc@gmail.com",
+      "password": "qwedsfrt",
+      "state": "Tamil",
+      "phone": 9333759393
+    },
+    {
+      "name": "Shreeraam",
+      "email": "shreeraam@gmail.com",
+      "password": "123456",
+      "state": "Tamilnadu",
+      "phone": "9876543211",
+      "id": 4
+    },
+    {
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "password": "123456789",
+      "state": "tamilnadu",
+      "phone": "1234567890",
+      "id": 5
+    },
+    {
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "password": "qwertyu",
+      "state": "tamilnadu",
+      "phone": "1234567890",
+      "id": 6
+    },
+    {
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "password": "wert",
+      "state": "tamilnadu",
+      "phone": "1234567890",
+      "id": 7
+    },
+    {
+      "name": "SUBESHA S",
+      "email": "727722euit188@skcet.ac.in",
+      "password": "12345678",
+      "state": "tamilnadu",
+      "phone": "9344780409",
+      "id": 8
+    }
+  ]
+}
