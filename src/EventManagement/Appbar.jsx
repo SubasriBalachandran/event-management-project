@@ -26,7 +26,7 @@ export default function Appbar() {
     <AppBar
       position="static"
       style={{
-        backgroundColor: "LavenderBlush",
+        backgroundColor: "MediumOrchid",
       }}
     >
       <Container maxWidth="xl">
@@ -40,13 +40,13 @@ export default function Appbar() {
               fontFamily: "monospace",
               fontWeight: 700,
               fontSize: 35,
-              color: "HotPink",
+              color: "DeepSkyBlue",
             }}
           >
             EventsHub!
           </Typography>
           <Link to="/home">
-            <HomeIcon style={{ color: "black" }}> </HomeIcon>
+            <HomeIcon style={{ color: "white" }}> </HomeIcon>
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <Menu
@@ -79,7 +79,7 @@ export default function Appbar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "black", display: "block" }}
+                sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
               </Button>
@@ -89,14 +89,14 @@ export default function Appbar() {
             <Button
               variant="outlined"
               style={{
-                backgroundColor: "white",
-                borderColor: "pink",
+                backgroundColor: "GhostWhite",
+                borderColor: "GhostWhite",
               }}
             >
               <nav>
                 <CustomLink
                   to="/login"
-                  style={{ textDecoration: "none", color: "blue" }}
+                  style={{ textDecoration: "none", color: "LightSeaGreen" }}
                 >
                   LOGIN
                 </CustomLink>
@@ -106,6 +106,7 @@ export default function Appbar() {
             <>
               <Typography>{user.name}</Typography>
               <Button
+                style={{ color: "black" }}
                 color="inherit"
                 onClick={() => dispatch({ type: "LOGOUT" })}
               >
@@ -115,13 +116,13 @@ export default function Appbar() {
           )}
           <Button
             style={{
-              backgroundColor: "pink",
+              backgroundColor: "LightSeaGreen",
             }}
           >
             <nav>
               <CustomLink
                 to="/signup"
-                style={{ textDecoration: "none", color: "blue" }}
+                style={{ textDecoration: "none", color: "white" }}
               >
                 SIGN UP
               </CustomLink>

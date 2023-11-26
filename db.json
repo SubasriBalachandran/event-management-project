@@ -63,6 +63,22 @@
       "state": "tamilnadu",
       "phone": "9344780409",
       "id": 8
+    },
+    {
+      "name": "SUBE",
+      "email": "727722euit188@skcet.ac.i",
+      "password": "123456",
+      "state": "tamilnadu",
+      "phone": "9344780409",
+      "id": 9
+    },
+    {
+      "name": "Ramya",
+      "email": "ramya@gmail.com",
+      "password": "ramya1233",
+      "state": "Tamilnadu",
+      "phone": "9876543261",
+      "id": 10
     }
   ]
 }

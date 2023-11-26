@@ -45,7 +45,7 @@
 
 .ft {
    align-items: start;
-  background-color: LavenderBlush;
+  background-color: DarkTurquoise;
   
 }
 
@@ -93,13 +93,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #3f5efb, #c84e66);
+  background: linear-gradient(to right, #bab4a9, #4e9fc8);
   
 }
 
 form {
   width: 25rem;
-  height: 23rem;
+  height: 28rem;
   display: flex;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.06);
@@ -114,6 +114,7 @@ label{
   margin-left: 10%;
   opacity: .8;
   text-shadow: 2px 2px 4px rgba(0,0,0,.2) ;
+  font-weight: 700;
 }
 input{
   width:80%;
@@ -201,9 +202,17 @@ p{
   box-shadow: 3px 3px 5px rgba(31,38,135,.75);
 }
 .userlogin{
- display: flex;
-justify-content: flex-start;
+ color: white;
+  letter-spacing: 3;
+  padding-top: 10%;
 
-  
+}
+.Div{
+  display: flex;
+justify-content: space-between;
+padding-right:1%;
+max-width: 345;
+margin-top:5%;
+margin-bottom:5%;
 
 }

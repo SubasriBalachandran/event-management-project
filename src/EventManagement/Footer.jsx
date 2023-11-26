@@ -12,7 +12,7 @@ function Footer() {
     <div className="ft">
       <footer>
         <Box className="main">
-          <Link>eventshub@gmail.com</Link>
+          <Link style={{ color: "black" }}>eventshub@gmail.com</Link>
           <div className="call">
             <CallIcon></CallIcon>+916739378903&emsp;
           </div>
