@@ -93,7 +93,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #bab4a9, #4e9fc8);
+  background: linear-gradient(to right, #e7bd70, #4e50c8);
   
 }
 
@@ -155,7 +155,7 @@ p{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #8d98cf, #491bb4);
+  background: linear-gradient(to right, #bcc2e0, #b41b8e);
   
 }
 .form {
@@ -215,4 +215,41 @@ max-width: 345;
 margin-top:5%;
 margin-bottom:5%;
 
+}
+.aText{
+  padding: '20px';
+  text-align: justify;
+  font-family:'geomanist';
+font-size:25px;
+}
+.aPaper{
+  width: 1000px;
+  height: 500px;
+  background-size: 'cover';
+  background-position: 'center'; 
+  color:"black";
+  font-size:'50px';
+  display:'flex';
+  justify-content:'flex-end';
+  align-items:'center';
+}
+.userpage{
+  
+  height: 150vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #2d4bde, #b41b8e);
+}
+.form1{
+  width: 30rem;
+  height: 55rem;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, .37);
+  border-radius: 30px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }

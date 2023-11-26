@@ -7,13 +7,13 @@ export default function Home() {
       <div style={{ display: "flex" }}>
         <img
           style={{ width: 1500, height: 350, marginTop: 20, marginBottom: 30 }}
-          src="https://th.bing.com/th?id=OIP.Sd8UakcCqiB_ktwcNmfCvwHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
+          src="https://th.bing.com/th/id/OIP.7HAYXnYrFGmkGEeibpNRHAHaEK?w=293&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
           alt=""
         />
         <h1
           style={{
             position: "absolute",
-            color: "white",
+            color: "crimson",
             marginLeft: "10%",
             marginTop: "10%",
             letterSpacing: "3vh",
@@ -88,7 +88,7 @@ export default function Home() {
       <div style={{ display: "flex" }}>
         <img
           style={{ width: 1500, height: 350, marginTop: 30, marginBottom: 30 }}
-          src="https://th.bing.com/th/id/OIP.7HAYXnYrFGmkGEeibpNRHAHaEK?w=293&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+          src="https://th.bing.com/th?id=OIP.Sd8UakcCqiB_ktwcNmfCvwHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
           alt=""
         />
         <h1

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   AppBar,
   Box,
@@ -13,26 +13,20 @@ import {
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import HomeIcon from "@mui/icons-material/Home";
-const pages = ["About", "Events", "Pricing", "Jobs+"];
+const pages = ["Pricing", "Jobs+"];
 export default function Appbar() {
   const { user, dispatch } = useContext(AuthContext);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const navigate = useNavigate();
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-  React.useState(() => {
-    if (user === null) {
-      navigate("/Logout");
-    }
-  }, [user, navigate]);
 
   return (
     <AppBar
       position="static"
       style={{
-        backgroundColor: "MediumOrchid",
+        backgroundColor: "Orange",
       }}
     >
       <Container maxWidth="xl">
@@ -52,8 +46,15 @@ export default function Appbar() {
             EventsHub!
           </Typography>
           <Link to="/home">
-            <HomeIcon style={{ color: "white" }}> </HomeIcon>
+            <HomeIcon style={{ color: "black" }}> </HomeIcon>
           </Link>
+          &emsp;
+          <CustomLink
+            to="/about"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            ABOUT
+          </CustomLink>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <Menu
               id="menu-appbar"
@@ -85,7 +86,7 @@ export default function Appbar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "black", display: "block" }}
               >
                 {page}
               </Button>
@@ -111,13 +112,24 @@ export default function Appbar() {
           ) : (
             <>
               <Typography>{user.name}</Typography>
-
+              &emsp;
               <Button
-                style={{ color: "black" }}
+                style={{
+                  color: "black",
+                  backgroundColor: "GhostWhite",
+                  fontWeight: 700,
+                }}
                 color="inherit"
                 onClick={() => dispatch({ type: "LOGOUT" })}
               >
-                Logout
+                <nav>
+                  <CustomLink
+                    to="/Logout"
+                    style={{ textDecoration: "none", color: "LightSeaGreen" }}
+                  >
+                    LOGOUT
+                  </CustomLink>
+                </nav>
               </Button>
             </>
           )}

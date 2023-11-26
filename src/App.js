@@ -7,6 +7,7 @@ import SignUp from "./EventManagement/SignUp";
 import Footer from "./EventManagement/Footer";
 import UserPage from "./EventManagement/UserPage";
 import Logout from "./EventManagement/Logout";
+import About from "./EventManagement/About";
 import { AuthContext } from "./EventManagement/AuthContext";
 
 import { useReducer } from "react";
@@ -26,6 +27,7 @@ function App() {
           <Route path="/home" element={<Home />}></Route>
           <Route path="/userpage" element={<UserPage />}></Route>
           <Route path="/Logout" element={<Logout />}></Route>
+          <Route path="/about" element={<About />}></Route>
         </Routes>
         <Footer></Footer>
       </div>

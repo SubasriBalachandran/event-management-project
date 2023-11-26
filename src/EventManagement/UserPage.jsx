@@ -1,4 +1,7 @@
 import React from "react";
+import { useState } from "react";
+import axios from "axios";
+
 import {
   CardActionArea,
   Typography,
@@ -7,6 +10,46 @@ import {
   Card,
 } from "@mui/material";
 function UserPage() {
+  const events = [
+    "Wedding",
+    "Birthday",
+    "Corporate Events",
+    "Parties",
+    "Meet Ups",
+    "Product Launches",
+  ];
+
+  const [push, setPush] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    event: "",
+    eventDate: "",
+    location: "",
+    state: "",
+    pincode: "",
+  });
+  const handleInput = (e) => {
+    setPush({ ...push, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (/^[0-9]{10}$/.test(push.phone)) {
+    } else {
+      alert("Invalid phone number format!");
+    }
+    axios
+      .post("http://localhost:4000/eventshub", push)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div>
       <div className="Div">
@@ -104,8 +147,17 @@ function UserPage() {
           </CardActionArea>
         </Card>
       </div>
-
-      <Typography variant="h5">
+      <Typography
+        variant="h5"
+        style={{
+          fontFamily: "NSimSun ",
+          fontSize: 20,
+          color: "blue",
+          marginLeft: "15%",
+          marginRight: "15%",
+          fontWeight: 700,
+        }}
+      >
         Some of the event organizers offer a complete package of food to
         accommodation. In such cases, the event website needs to organized well
         so that the user can easily find what they want. In these free event
@@ -114,12 +166,32 @@ function UserPage() {
         you check all the free event website templates mentioned in this list to
         get a better idea before starting your site.
       </Typography>
-      <h3>Convention</h3>
+      <h1
+        style={{
+          fontFamily: "Lucida Console",
+          fontSize: 60,
+          color: "Crimson",
+          marginLeft: "7%",
+        }}
+      >
+        Convention
+      </h1>
       <img
+        style={{ marginLeft: "7%" }}
         src="https://149842033.v2.pressablecdn.com/wp-content/uploads/2019/10/free-event-website-templates-1000x750.jpg"
         alt=""
       />
-      <Typography variant="h5">
+      <Typography
+        variant="h5"
+        style={{
+          fontFamily: "NSimSun ",
+          fontSize: 20,
+          color: "blue",
+          marginLeft: "15%",
+          marginRight: "15%",
+          fontWeight: 700,
+        }}
+      >
         Convention is a lively event website template. Bright colors and swift
         animations deliver an engaging user experience. The consistent color
         scheme and precisely calibrated animations will help the site owners to
@@ -130,12 +202,33 @@ function UserPage() {
         with this template, and they can integrate any tools into this template
         without any issue.
       </Typography>
-      <h3>Eventz</h3>
+      <h1
+        style={{
+          fontFamily: "Lucida Console",
+          fontSize: 60,
+          color: "Crimson",
+          marginLeft: "7%",
+        }}
+      >
+        Eventz
+      </h1>
       <img
+        style={{ marginLeft: "7%" }}
         src="https://149842033.v2.pressablecdn.com/wp-content/uploads/2020/04/Eventz.jpg"
         alt=""
       />
-      <Typography variant="h5">
+      <Typography
+        variant="h5"
+        style={{
+          fontFamily: "NSimSun ",
+          fontSize: 20,
+          color: "blue",
+          marginLeft: "15%",
+          marginRight: "15%",
+          fontWeight: 700,
+          marginBottom: "5%",
+        }}
+      >
         Digital conferences are becoming more common nowadays. Holding a digital
         conference isn’t an easy job; you have to take care of lots of technical
         stuff and have to configure them neatly into your website for a seamless
@@ -146,8 +239,106 @@ function UserPage() {
         features work flawlessly from the front-end side. Plus, the clean code
         structure makes the developers’ backend work easier.
       </Typography>
+      <div className="userpage">
+        <form onSubmit={handleSubmit} className="form1">
+          <br></br>
+          <center>
+            <Typography
+              component="h2"
+              variant="h4"
+              color="white"
+              letterSpacing={6}
+            >
+              Book Now!
+            </Typography>
+          </center>
+          <label className="lb">Name</label>
+          <input
+            className="inp"
+            id="Name"
+            name="name"
+            type="Name"
+            value={push.name}
+            onChange={handleInput}
+            required
+          />
+          <label className="lb">Email Address</label>
+          <input
+            className="inp"
+            id="email"
+            name="email"
+            type="email"
+            value={push.email}
+            onChange={handleInput}
+            required
+          />
+          <label className="lb">State</label>
+          <input
+            className="inp"
+            id="state"
+            name="state"
+            type="State"
+            value={push.state}
+            onChange={handleInput}
+            required
+          />
+          <label className="lb">Phone Number</label>
+          <input
+            className="inp"
+            type="tel"
+            id="phone"
+            name="phone"
+            value={push.phone}
+            onChange={handleInput}
+            pattern="[0-9]{10}"
+            required
+          />
+          <label htmlFor="events">Event-Type:</label>
+          <select
+            id="events"
+            name="events"
+            value={push.event}
+            onChange={handleInput}
+          >
+            <option value="">Select a event</option>
+            {events.map((event, index) => (
+              <option key={index} value={push.event}>
+                {event}
+              </option>
+            ))}
+          </select>
+          <br />
+          <label className="lb">
+            Event Location:
+            <input
+              className="inp"
+              id="textarea"
+              name="location"
+              type="textarea"
+              value={push.location}
+              onChange={handleInput}
+              required
+            />
+          </label>
+          <br />
+          <label className="lb">
+            Event Date:
+            <input
+              className="inp"
+              type="date"
+              name="eventDate"
+              value={push.eventDate}
+              onChange={handleInput}
+              required
+            />
+          </label>
+          <br />
+          <button type="submit" className="button" color="white">
+            <b>Submit</b>
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
-
 export default UserPage;
