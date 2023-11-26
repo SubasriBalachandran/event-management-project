@@ -17,7 +17,7 @@ const pages = ["Pricing", "Jobs+"];
 export default function Appbar() {
   const { user, dispatch } = useContext(AuthContext);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-
+  const [show, setShow] = useState(true);
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
@@ -111,7 +111,9 @@ export default function Appbar() {
             </Button>
           ) : (
             <>
-              <Typography>{user.name}</Typography>
+              <Typography variant="h4" color={"rose"}>
+                {user.name}
+              </Typography>
               &emsp;
               <Button
                 style={{
@@ -136,6 +138,7 @@ export default function Appbar() {
           <Button
             style={{
               backgroundColor: "LightSeaGreen",
+              className: "hash",
             }}
           >
             <nav>

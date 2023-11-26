@@ -3,7 +3,7 @@ import React from "react";
 
 const Logout = () => {
   return (
-    <Container style={{ mt: "12px", marginBottom: "30%" }}>
+    <Container style={{ marginTop: "10%", marginBottom: "30%" }}>
       <Typography
         variant="h3"
         style={{
