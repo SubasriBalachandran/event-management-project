@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   AppBar,
   Box,
@@ -14,14 +14,20 @@ import { useContext, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import HomeIcon from "@mui/icons-material/Home";
 const pages = ["About", "Events", "Pricing", "Jobs+"];
-
 export default function Appbar() {
   const { user, dispatch } = useContext(AuthContext);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+  React.useState(() => {
+    if (user === null) {
+      navigate("/Logout");
+    }
+  }, [user, navigate]);
+
   return (
     <AppBar
       position="static"
@@ -105,6 +111,7 @@ export default function Appbar() {
           ) : (
             <>
               <Typography>{user.name}</Typography>
+
               <Button
                 style={{ color: "black" }}
                 color="inherit"
