@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import {
@@ -10,15 +11,7 @@ import {
   Card,
 } from "@mui/material";
 function UserPage() {
-  const events = [
-    "Wedding",
-    "Birthday",
-    "Corporate Events",
-    "Parties",
-    "Meet Ups",
-    "Product Launches",
-  ];
-
+  const navigate = useNavigate();
   const [push, setPush] = useState({
     name: "",
     email: "",
@@ -40,14 +33,14 @@ function UserPage() {
     } else {
       alert("Invalid phone number format!");
     }
-    axios
-      .post("http://localhost:4000/eventshub", push)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // axios
+    //   .post("http://localhost:4000/eventshub", push)
+    //   .then((response) => {
+    //     console.log(response.data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   };
 
   return (
@@ -282,6 +275,16 @@ function UserPage() {
             onChange={handleInput}
             required
           />
+          <label className="lb">Event-Type:</label>
+          <input
+            className="inp"
+            id="event"
+            name="event"
+            type="event"
+            value={push.event}
+            onChange={handleInput}
+            required
+          />
           <label className="lb">Phone Number</label>
           <input
             className="inp"
@@ -293,21 +296,7 @@ function UserPage() {
             pattern="[0-9]{10}"
             required
           />
-          <label htmlFor="events">Event-Type:</label>
-          <select
-            id="events"
-            name="events"
-            value={push.event}
-            onChange={handleInput}
-          >
-            <option value="">Select a event</option>
-            {events.map((event, index) => (
-              <option key={index} value={push.event}>
-                {event}
-              </option>
-            ))}
-          </select>
-          <br />
+
           <label className="lb">
             Event Location:
             <input

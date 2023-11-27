@@ -25,6 +25,7 @@ const Login = () => {
       );
       userContext.dispatch({ type: "LOGIN", payload: foundUser });
       if (foundUser) {
+        navigate("/userpage");
       } else {
         setError("Invalid email or password. Please try again.");
       }
