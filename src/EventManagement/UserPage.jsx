@@ -33,14 +33,14 @@ function UserPage() {
     } else {
       alert("Invalid phone number format!");
     }
-    // axios
-    //   .post("http://localhost:4000/eventshub", push)
-    //   .then((response) => {
-    //     console.log(response.data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+    axios
+      .post("http://localhost:4000/eventshub", push)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

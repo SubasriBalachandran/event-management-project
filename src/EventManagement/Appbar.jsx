@@ -17,7 +17,6 @@ const pages = [];
 export default function Appbar() {
   const { user, dispatch } = useContext(AuthContext);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [show, setShow] = useState(true);
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
@@ -135,21 +134,23 @@ export default function Appbar() {
               </Button>
             </>
           )}
-          <Button
-            style={{
-              backgroundColor: "LightSeaGreen",
-              className: "hash",
-            }}
-          >
-            <nav>
-              <CustomLink
-                to="/signup"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                SIGN UP
-              </CustomLink>
-            </nav>
-          </Button>
+          {!user && (
+            <Button
+              style={{
+                backgroundColor: "LightSeaGreen",
+                className: "hash",
+              }}
+            >
+              <nav>
+                <CustomLink
+                  to="/signup"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  SIGN UP
+                </CustomLink>
+              </nav>
+            </Button>
+          )}
         </Toolbar>
       </Container>
     </AppBar>
