@@ -13,7 +13,7 @@ import {
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import HomeIcon from "@mui/icons-material/Home";
-const pages = ["Events", "Pricing", "Jobs++"];
+const pages = [];
 export default function Appbar() {
   const { user, dispatch } = useContext(AuthContext);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -53,6 +53,13 @@ export default function Appbar() {
             style={{ textDecoration: "none", color: "black" }}
           >
             ABOUT
+          </CustomLink>
+          &emsp;
+          <CustomLink
+            to="/packages"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            PACKAGES
           </CustomLink>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <Menu

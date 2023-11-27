@@ -8,6 +8,12 @@ import Footer from "./EventManagement/Footer";
 import UserPage from "./EventManagement/UserPage";
 import Logout from "./EventManagement/Logout";
 import About from "./EventManagement/About";
+import Wedding from "./EventManagement/Wedding";
+import Birthday from "./EventManagement/Birthday";
+import FashionDesigning from "./EventManagement/FashionDesigning";
+import Packages from "./EventManagement/Packages";
+import CorporateEvents from "./EventManagement/CorporateEvents";
+
 import { AuthContext } from "./EventManagement/AuthContext";
 
 import { useReducer } from "react";
@@ -28,6 +34,11 @@ function App() {
           <Route path="/userpage" element={<UserPage />}></Route>
           <Route path="/Logout" element={<Logout />}></Route>
           <Route path="/about" element={<About />}></Route>
+          <Route path="/wedding" element={<Wedding />}></Route>
+          <Route path="/birthday" element={<Birthday />}></Route>
+          <Route path="/fashion" element={<FashionDesigning />}></Route>
+          <Route path="/packages" element={<Packages />}></Route>
+          <Route path="/corporate" element={<CorporateEvents />}></Route>
         </Routes>
         <Footer></Footer>
       </div>
