@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import {
@@ -9,9 +8,9 @@ import {
   CardMedia,
   CardContent,
   Card,
+  Button,
 } from "@mui/material";
 function UserPage() {
-  const navigate = useNavigate();
   const [push, setPush] = useState({
     name: "",
     email: "",
@@ -322,9 +321,14 @@ function UserPage() {
             />
           </label>
           <br />
-          <button type="submit" className="button" color="white">
-            <b>Submit</b>
-          </button>
+          {/* <Button type="submit" className="button" color="white">
+            Submit
+          </Button> */}
+          <center>
+            <Button type="submit" className="but" style={{ color: "white" }}>
+              Book
+            </Button>
+          </center>
         </form>
       </div>
     </div>

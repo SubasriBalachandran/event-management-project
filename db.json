@@ -97,8 +97,72 @@
       "id": 12
     }
   ],
-  "eventshub":[
-
-]
-  
+  "eventshub": [
+    {
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "phone": "0234567890",
+      "event": "wedding",
+      "eventDate": "2023-11-08",
+      "location": "chennai",
+      "state": "tamilnadu",
+      "pincode": "",
+      "id": 1
+    },
+    {
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "phone": "0234567890",
+      "event": "wedding",
+      "eventDate": "2023-11-08",
+      "location": "chennai",
+      "state": "tamilnadu",
+      "pincode": "",
+      "id": 2
+    },
+    {
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "phone": "0234567890",
+      "event": "wedding",
+      "eventDate": "2023-11-08",
+      "location": "chennai",
+      "state": "tamilnadu",
+      "pincode": "",
+      "id": 3
+    },
+    {
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "phone": "0234567890",
+      "event": "wedding",
+      "eventDate": "2023-11-08",
+      "location": "chennai",
+      "state": "tamilnadu",
+      "pincode": "",
+      "id": 4
+    },
+    {
+      "name": "Ravi",
+      "email": "ram@gmail.com",
+      "phone": "9345678900",
+      "event": "Birthday Party",
+      "eventDate": "2023-11-02",
+      "location": "chennai",
+      "state": "Tamilnadu",
+      "pincode": "",
+      "id": 5
+    },
+    {
+      "name": "Ravi",
+      "email": "ram@gmail.com",
+      "phone": "9345678900",
+      "event": "Birthday Party",
+      "eventDate": "2023-11-02",
+      "location": "chennai",
+      "state": "Tamilnadu",
+      "pincode": "",
+      "id": 6
+    }
+  ]
 }

@@ -13,7 +13,7 @@ import {
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import HomeIcon from "@mui/icons-material/Home";
-const pages = [];
+const pages = ["Events", "Pricing", "Jobs++"];
 export default function Appbar() {
   const { user, dispatch } = useContext(AuthContext);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
