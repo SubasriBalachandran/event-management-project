@@ -1,1001 +1,1255 @@
-// binary search
+// 1. AREA OF WALL
 
-// #include<iostream>
-// using namespace std;
-// void binarySearch(int n,int a[],int k){
-//     int s=0,mid;//start index
-//     int e=n-1;//end
-//     while(s<=e){
-//     mid=s+(e-s)/2;
-//     if(a[mid]==k){
-//         cout<<mid;
-//     return ;}
-//     else if(a[mid]>k)
-//     e=mid-1;
-//     else
-//     s=mid+1;
+// import java.util.*;
+// class Wall{
+//     private
+//     double length,height;int num;
+//     public Wall(double length,double height,int num){
+//         this.length=length;
+//         this.height=height;
+//         this.num=num;
 //     }
-//     cout<<"NO OCCURRENCES";
+//     public void calculateArea(){
+//         System.out.println("Area of Wall "+num+": "+(int)(length*height));
+//     }
 // }
-// int main(){
-//     int n,k;
-//     cin>>n;
-//     int a[n];
-//     for(int i=0;i<n;i++){
-//     cin>>a[i];
-//     }
-//     cin>>k;
-//     binarySearch(n,a,k);
-//     }
-
-//  linear search
-
-// #include<iostream>
-// using namespace std;
-// bool linearSearch(int n,int a[],int k){
-//     for(int i=0;i<n;i++)
-//     if(a[i]==k)return true;
-//     return false;
-//     }
-// int main(){
-//     int n;cin>>n;
-//     int a[n],k;
-//     for(int i=0;i<n;i++)
-//      cin>>a[i];
-//     cin>>k;
-//     bool ans=linearSearch(n,a,k);
-//     if(ans) cout<<"Yes";
-//     else cout<<"No";
+// class Main{
+//     public static void main(String args[]){
+//      Scanner sc=new Scanner(System.in);
+//      double l1=sc.nextDouble();
+//      double h1=sc.nextDouble();
+//      double l2=sc.nextDouble();
+//      double h2=sc.nextDouble();
+//     Wall a=new Wall(l1,h1,1);
+//     a.calculateArea();
+//     Wall b=new Wall(l2,h2,2);
+//     b.calculateArea();
+// }
 // }
 
-// bubble 
+// 2) PROFESSOR
 
-// #include<iostream>
-// using namespace std;
-// int main(){
-//     int n;
-//     cin>>n;
-//     int a[n];
-//     for(int i=0;i<n;i++) cin>>a[i];
-//     for(int i=0;i<n;i++){
-//         for(int j=0;j<n;j++){
-//             if(a[j]>a[i]){
-//                 swap(a[i],a[j]);
+// import java.util.Scanner;
+// class Professor {
+//     int id;
+//     String name;
+//     int salary;
+//     Professor(int id,String name,int salary) {
+//         this.id = id;
+//         this.name = name;
+//         this.salary = salary;
+//     }
+//     public void display() {
+//         System.out.println(id +" "+name +" "+salary);
+//     }
+// }
+// class Main {
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         int n=sc.nextInt();
+//         Professor[] p=new Professor[n];
+//         for (int i=0;i<n;i++) {
+//             int id=sc.nextInt();
+//             String name=sc.next();
+//             int salary=sc.nextInt();
+//             p[i] =new Professor(id,name,salary);
+//         }
+//         for (int i=0;i<n;i++) {
+//             if (p[i].salary>=20000) {
+//                 p[i].display();
 //             }
 //         }
+//     }
+// }
+// 3) ICE CREAM
+
+// import java.util.Scanner;
+// import java.math.*;
+// import java.text.DecimalFormat;
+// class Icecream
+// {
+//     public double qty, qty_rd, pi=3.14;
+//     DecimalFormat d=new DecimalFormat("0.00");
+//     public void Quantity(int r)
+//     {
+//         qty=1.33*pi*r*r*r;
+//         qty_rd=Math.round(qty*100.0)/100.0;
+//         System.out.println(d.format(qty_rd));
+//     }
+//     public void Quantity(int r, int h)
+//     {
+//         qty=0.33*pi*r*r*h;
+//         qty_rd=Math.round(qty*100.0)/100.0;
+//         System.out.println(d.format(qty_rd));
+//     }
+// }
+// class main
+// {
+//     public static void main(String[] args)
+//     {
+//         int r,h;
+//         Icecream ic=new Icecream();
+//         Scanner ob=new Scanner(System.in);
+//         r=ob.nextInt();
+//         if(ob.hasNextInt())
+//         {
+//             h=ob.nextInt();
+//             ic.Quantity(r,h);
 //         }
+//         else
+//         {
+//             ic.Quantity(r);
+//         }
+//     }
+// }
+
+// 4)  MANAGER AND ENGINEER
+
+// import java.util.Scanner;
+// class Employee
+// {
+//     public double tot;
+//     public void calculateSalary()
+//     {
+
+//     }
+//     public double calculateSalary(double a, double b)
+//     {
+//         tot=a+b;
+//         return tot;
+//     }
+// }
+// class Manager extends Employee
+// {
+//     public double calculateSalary(double c, double d)
+//     {
+//         return c+d;
+//     }
+// }
+// class Engineer extends Employee
+// {
+//     public double calculateSalary(double e, double f)
+//     {
+//         return e+f;
+//     }
+// }
+// class Main
+// {
+//     public static void main(String[] args)
+//     {
+//         Scanner ob=new Scanner(System.in);
+//         String ManagerName=ob.nextLine();
+//         double bs=ob.nextDouble();
+//         double ex=ob.nextDouble();
+//         Manager m=new Manager();
+//         System.out.println("Manager Salary: "+m.calculateSalary(bs,ex));
+//         ob.nextLine();
+//         String EngineerName=ob.nextLine();
+//         double bs2=ob.nextDouble();
+//         double ex2=ob.nextDouble();
+//         Engineer eg=new Engineer();
+//         System.out.println("Engineer Salary: "+eg.calculateSalary(bs2,ex2));
+//     }
+// }
+// 5)  SPECIAL CHARACTERS
+
+// import java.util.*;
+// class Demo
+// {
+//     public static void move(String str)
+//     {
+//         String x="";
+//         for(int i=0;i<str.length();i++)
+//         {
+//             if(!Character.isLetter(str.charAt(i)) && !Character.isDigit(str.charAt(i)))
+//             {
+//                 x+=str.charAt(i);
+//             }
+//             else
+//             {
+//                 System.out.print(str.charAt(i));
+//             }
+//         }
+//         System.out.println(x);
+//     }
+// }
+// class main
+// {
+//     public static void main(String[] args)
+//     {
+//         Scanner ob=new Scanner(System.in);
+//         String s=ob.nextLine();
+//         Demo d=new Demo();
+//         d.move(s);
+//     }
+// }
+
+// 6) ONLINE SHOPPING PORTAL
+
+// import java.util.Scanner;
+
+// class Basic{
+//     String name,city;
+//     int age;
+//     String gender;
+//     int bill;
+//     void setter(String name, String city, int age, String gender, int bill){
+//         this.name = name;
+//         this.city = city;
+//         this.age = age;
+//         this.gender = gender;
+//         this.bill = bill;
+//     }
+//     void display(){
+//         System.out.println(name);
+//         System.out.println(city);
+//         System.out.println(age);
+//         System.out.println(gender);
+//         System.out.println(bill);
+//     }
+//     int calc(){
+//         if(bill >=1 && bill < 5000){
+//             return 100;
+//         }
+//         else if(bill >= 5000 && bill < 7500 ){
+//             return 250;
+//         }
+//         else if(bill >= 7500 && bill < 10000){
+//             return 500;
+//         }
+//         else if(bill >= 10000 && bill < 20000){
+//             return 750;
+//         }
+//         else if(bill >=20000 && bill < 30000){
+//             return 1000;
+//         }
+//         else{
+//             return 1500;
+//         }
+//     }
+// }
+
+// class Premium extends Basic{
+//     int bill;
+//     void set(int k){
+//         this.bill = k;
+//     }
+//     @Override int calc(){
+//         if(bill >=1 && bill < 5000){
+//             return 200;
+//         }
+//         else if(bill >= 5000 && bill < 7500 ){
+//             return 400;
+//         }
+//         else if(bill >= 7500 && bill < 10000){
+//             return 700;
+//         }
+//         else if(bill >= 10000 && bill < 20000){
+//             return 1000;
+//         }
+//         else if(bill >=20000 && bill < 30000){
+//             return 1500;
+//         }
+//         else{
+//             return 2000;
+//         }
+//     }
+// }
+
+// class Main{
+//     public static void main(String[] args){
+//         Scanner sc = new Scanner(System.in);
+//         String name = sc.nextLine();
+//         String city = sc.nextLine();
+//         int age = sc.nextInt();
+//         sc.nextLine();
+//         String gender = sc.nextLine();
+//         int bill = sc.nextInt();
+//         int m = sc.nextInt();
+//         if(m == 0){
+//             Basic b = new Basic();
+//             b.setter(name, city, age, gender, bill);
+//             b.display();
+//             System.out.print(b.calc());
+//         }
+//         else{
+//             int k = sc.nextInt();
+//             Premium p = new Premium();
+//             p.setter(name, city, age, gender, bill);
+//             p.display();
+//             System.out.println(k);
+//             p.set(bill);
+//             System.out.print(p.calc());
+//         }
+//     }
+// }
+
+// _______7) NaN NaN
+
+// import java.util.*;
+// import java.text.*;
+// abstract class Complex{
+//     abstract void func(int a,int b,int c,int d);
+//     DecimalFormat df = new DecimalFormat("0.0000");
+// }
+// class Addition extends Complex{
+//     void func(int a,int b,int c,int d){
+//         System.out.println("Addition:");
+//         System.out.print("\t");
+//         System.out.print(df.format(a+c) + " +");
+//         System.out.print(df.format(b+d) + " i\n");
+//     }
+// }
+// class Subtraction extends Complex{
+//     void func(int a,int b,int c,int d){
+//         System.out.println("Subtraction:");
+//         System.out.print("\t");
+//         System.out.print(df.format(a-c));
+//         if(b-d < 0)
+//             System.out.print(" ");
+//         else
+//             System.out.print(" +");
+//         System.out.print(df.format(b-d) + " i\n");
+//     }
+// }
+// class Multiplication extends Complex{
+//     void func(int a,int b,int c,int d){
+//         System.out.println("Multiplication:");
+//         System.out.print("\t");
+//         System.out.print(df.format(a*c - b*d));
+//         if(a*d + b*c < 0)
+//             System.out.print(" -");
+//         else
+//             System.out.print(" +");
+//         System.out.print(df.format(a*d + b*c) + " i\n");
+//     }
+// }
+// class Division extends Complex{
+//     void func(int a,int b,int c,int d){
+//         System.out.println("Division:");
+//         System.out.print("\t");
+//         if(c*c + d*d == 0){
+//             System.out.print("NaN NaN i");
+//             return;
+//         }
+//         System.out.print(df.format((a*c + b*d + 0.0) / (c*c + d*d)));
+//         if(b*c - a*d < 0)
+//             System.out.print(" ");
+//         else
+//             System.out.print(" +");
+//         System.out.print(df.format((b*c - a*d + 0.0) / (c*c + d*d)) + " i\n");
+//     }
+// }
+// class Main{
+//     public static void main(String[] args){
+//         Scanner s = new Scanner(System.in);
+//         int a = s.nextInt();
+//         int b = s.nextInt();
+//         int c = s.nextInt();
+//         int d = s.nextInt();
+//         Addition A = new Addition();
+//         Subtraction S = new Subtraction();
+//         Multiplication M = new Multiplication();
+//         Division D = new Division();
+//         A.func(a,b,c,d);
+//         S.func(a,b,c,d);
+//         M.func(a,b,c,d);
+//         D.func(a,b,c,d);
+//     }
+// }
+
+// 8)  odd and even position SUM
+
+// import java.util.*;
+// interface Total{
+//     void sum(int n,int a[]);
+// }
+// class B implements Total{
+//     public void sum(int n,int a[]){
 //         for(int i=0;i<n;i++){
-//             cout<<a[i]<<" ";
-//         }
-    
-// }
-
-
-// insertion
-
-// #include <iostream>
-// using namespace std;
-// int main() {
-//   int n;cin>>n;int a[n];for(int i=0;i<n;i++)cin>>a[i];
-//   for (int i = 1;i< n;i++) {
-//       int key=a[i];
-//     int j = i - 1;
-//     while (key < a[j] && j >= 0) {
-//       a[j + 1] = a[j];
-//       j--;
+//         System.out.print(a[i]+" ");
 //     }
-//     a[j + 1] = key;
-//   }
-// for (int i = 0; i < n; i++)
-//     cout << a[i] << " ";
-// }
-
-
-// selection
-
-// #include<iostream>
-// using namespace std;
-// int main(){
-//     int n;
-//     cin>>n;
-//     int day[n],month[n],year[n];
-//     for(int i=0;i<n;i++){
-//         cin>>day[i]>>month[i]>>year[i];
-//     }
-//     for(int i=0;i<n;i++){
-//         for(int j=0;j<n;j++){
-//             if(year[j]>year[i]){
-//                 swap(year[i],year[j]);
-//                 swap(month[i],month[j]);
-//                 swap(day[i],day[j]);
-//             }
-//         }
-//     }
-//     for(int i=0;i<n;i++){
-//         cout<<day[i]<<" "<<month[i]<<" "<<year[i]<<endl;
 //     }
 // }
-
-
-// heap
-
-// #include <iostream>
-// #include <vector>
-// using namespace std;
-// void min_heapify(vector<int>& arr, int n, int i) {
-//     int smallest = i;
-//     int left_child = 2 * i + 1;
-//     int right_child = 2 * i + 2;
-//     if (left_child < n && arr[left_child] < arr[smallest]) {
-//         smallest = left_child;
-//     }
-//     if (right_child < n && arr[right_child] < arr[smallest]) {
-//         smallest = right_child;
-//     }
-//     if (smallest != i) {
-//         swap(arr[i], arr[smallest]);
-//         min_heapify(arr, n, smallest);
-//     }
-// }
-// void build_min_heap(vector<int>& arr) {
-//     int n = arr.size();
-//     for (int i = n / 2 - 1; i >= 0; i--) {
-//         min_heapify(arr, n, i);
-//     }
-// }
-// void convert_to_min_heap(vector<int>& arr) {
-//     build_min_heap(arr);
-// }
-// int main() {
-//     int n;
-//     cin >> n;
-//     vector<int> arr(n);
-//     for (int i = 0; i < n; i++) {
-//         cin >> arr[i];
-//     }
-//     cout << "Original Array: ";
-//     for (int i = 0; i < n; i++) {
-//         cout << arr[i] << " ";
-//     }
-//     cout << endl;
-//     convert_to_min_heap(arr);
-//     cout << "Min Heap: ";
-//     for (int i = 0; i < n; i++) {
-//         cout << arr[i] << " ";
-//     }
-//     cout << endl;
-//     return 0;
-// }
-
-
-
-// ouick
-
-// #include<iostream>
-// using namespace std;
-// int partion(int*arr,int s,int e){
-//     int pivot=arr[s];
-//     int count=0;
-//     for(int i=s+1;i<=e;i++){
-//         if(arr[i]<=pivot){
-//             count++;
-//         }
-//     }
-//  int pvtidx=s+count;
-//  swap(arr[pvtidx],arr[s]);
-//  int i=s;
-//  int j=e;
-//  while(i<pvtidx&&j>pvtidx){
-//      while(arr[i]<=arr[pvtidx]){
-//          i++;
-//      }
-//      while(arr[j]>arr[pvtidx]){
-//          j--;
-//      }
-//      if(i<pvtidx&&j>pvtidx){
-//          swap(arr[i],arr[j]);
-//          i++;
-//          j--;
-//      }
-//  }
-//  return pvtidx;
-// }
-// void quicksort(int *arr,int s,int e){
-//     if(s>=e) return;
-//     int pi=partion(arr,s,e);
-//     quicksort(arr,s,pi-1);
-//     quicksort(arr,pi+1,e);
-// }
-// int main(){
-//     int n;
-//     cin>>n;
-//     int arr[n];
-//     for(int i=0;i<n;i++)
-//     cin>>arr[i];
-//     quicksort(arr,0,n-1);
-//     for(int i=0;i<n;i++) cout<<arr[i]<<" ";
-
-// }
-
-
-// merge
-
-// using namespace std;
-// int main() {
-//     int size1, size2;
-//     cin >> size1;
-//     int arr1[size1];
-//     for (int i = 0; i < size1; i++) {
-//         cin >> arr1[i];
-//     }
-//     cin >> size2;
-//     int arr2[size2];
-//     for (int i = 0; i < size2; i++) {
-//         cin >> arr2[i];
-//     }
-//     int mergedSize = size1 + size2;
-//     int mergedArray[mergedSize];
-//     int i = 0, j = 0, k = 0;
-//     while (i < size1 && j < size2) {
-//         if (arr1[i] < arr2[j]) {
-//             mergedArray[k++] = arr1[i++];
-//         } else {
-//             mergedArray[k++] = arr2[j++];
-//         }
-//     }
-//     while (i < size1) {
-//         mergedArray[k++] = arr1[i++];
-//     }
-//     while (j < size2) {
-//         mergedArray[k++] = arr2[j++];
-//     }
-//     for (int i = 0; i < mergedSize; i++) {
-//         cout << mergedArray[i] << " ";
-//     }
-//     return 0;
-// }
-
-// activity
-
-// #include<iostream>
-// #include<algorithm>
-// using namespace std;
-// struct Match{
-//     string name;
-//     int f;
-//     int s;
-// };
-// bool compareMatches(const Match& a,const Match&b)
-// {
-//     return a.f<b.f;
-// }
-// int main()
-// {
-//     int n;
-//     cin>>n;
-//     struct Match m[50];
-//     for(int i=0;i<n;i++)
-//     {
-//         cin>>m[i].name>>m[i].s>>m[i].f;
-//     }
-//     sort(m,m+n,compareMatches);
-//     cout<<"Selected Activities are: "<<endl;
-//     int i=0;
-//     cout<<m[i].name<<" ";
-//     for(int j=1;j<n;j++)
-//     {
-//         if(m[j].s>=m[i].f)
-//         {
-//             cout<<m[j].name;
-//             i=j;
-//         }
-//     }
-// }
-
-
-
-// knapsack
-
-// #include<iostream>
-// #include<algorithm>
-// #include<iomanip>
-// using namespace std;
-// struct profit{
-//     int w;
-//     int v;
-// };
-// bool check(const profit& a,const profit &b){
-//     return (double) a.v/a.w>(double) b.v/b.w;
-// }
-// double knapstack(profit p[],int n,int c)
-// {
-//     sort(p,p+n,check);
-    
-//     int currW=0;
-//     double totalV=0.0;
-    
-//     for(int i=0;i<n;i++){
-//         if(currW+p[i].w<=c){
-//             currW+=p[i].w;
-//             totalV+=p[i].v;
-//         }
-//         else{
-//             int reminder=c - currW;
-//             totalV+=(double)p[i].v/p[i].w*reminder;
-//             break;
-//         }
-//     }
-//     return totalV;
-// }
-// int main()
-// {
-//     int n;
-//     cin>>n;
-//     struct profit p[50];
-//     for(int i=0;i<n;i++){
-//         cin>>p[i].w>>p[i].v;
-        
-//     }
-//     cout<<"Maximum profit is:- ";
-//     int capacity;  cin>>capacity;
-//     cout<<fixed<<setprecision(2)<<knapstack(p,n,capacity);
-// }
-
-
-// naive
-
-// #include<iostream>
-// using namespace std;
-// void find(string text,string pattern)
-// {
-//     int n=text.length();
-//     int m=pattern.length();
-//     bool found=false;
-//     int i,j;
-//     for(i=0;i<n;)
-//     {
-//         for(j=0;j<m;)
-//         {
-//             if(text[i]==pattern[j])
-//             {
-//                 i++;
-//                 j++;
-//             }
-//             else
-//             {
-//                 i++;
-//                 break;
-//             }
-//         }
-//         if(j==m){
-//             cout<<"Found at "<<i-j<<endl;
-//             found=true;
-//         }
-//     }
-//         if(!found)
-//         cout<<"Not Found"<<endl;
-// }
-// int main()
-// {
-//     string s;
-//     cin>>s;
-//     string h;
-//     cin>>h;
-//     find(s,h);
-// }
-
-
-// kmp
-
-// #include<iostream>
-// using namespace std;
-// void computelpsarray(string pat,int m,int lps[]){
-//     int len=0;
-//     lps[0]=0;
-//     int i=1;
-//     while(i<m){
-//         if(pat[0]==pat[len]){
-//             len++;
-//             lps[i]=len;
-//             i++;
-//         }
-//         else{
-//             if(len!=0){
-//                 len=lps[len-1];
-//             }
-//             else{
-//                 lps[i]=0;
-//                 i++;
-//             }
-//         }
-//     }
-// }
-// void kmp(string txt,string pat){
-//     int n=txt.length(),m=pat.length();
-//     int lps[m]={0};
-//     computelpsarray(pat,m,lps);
-//     int i=0,j=0,f=0;
-//     while(i<n){
-//         if(pat[j]==txt[i]){
-//             j++;
-//             i++;
-//         }
-//         if(j==m){
-//             cout<<"Found at "<<i-j<<endl;
-//             j=lps[j-1];
-//             f=1;
-//         }
-//         else if(i<n && pat[j]!=txt[i]){
-//             if(j!=0)
-//             j=lps[j-1];
-//             else
-//             i=i+1;
-//         }
-//     }
-//     if(f==0)
-//     cout<<"Not Found";
-// }
-// int main(){
-//     string txt,pat;
-//     cin>>txt>>pat;
-//     kmp(txt,pat);
-// }
-
-
-
-//  subset sum problem
-
-// #include<iostream>
-// using namespace std;
-// int count(int a[],int n,int sum,int current){
-//     if(sum==0){
-//         return 1;
-//     }
-//     if(current>=n||sum<0){
-//         return 0;
-//     }
-//     int in=count(a,n,sum-a[current],current+1);
-//     int ex=count(a,n,sum,current+1);
-//     return in+ex;
-    
-// }
-// int main(){
-//     int n,target;
-//     cin>>n;
-//     int a[n];
-//     for(int i=0;i<n;i++){
-//         cin>>a[i];
-//     }
-//     cin>>target;
-//     int total=count(a,n,target,0);
-//     cout<<total<<endl;
-// }
-
-
-
-
-
-// rat
-
-// #include<iostream>
-// using namespace std;
-// bool issafe(int** arr, int x, int y, int n){
-//     if(x<n && y<n && arr[x][y]==1){
-//         return true;
-//     }
-//     return false;
-// }
-// bool ratinMaze(int** arr, int x, int y, int n, int** solArr){
-//     if(x==n-1 && y==n-1){
-//         solArr[x][y]=1;
-//         return true;
-//     }
-//     if(issafe(arr, x, y, n)){
-//         solArr[x][y]=1;
-//         if(ratinMaze(arr, x+1, y, n, solArr)){
-//             return true;
-//         }
-//         if(ratinMaze(arr, x, y+1, n, solArr)){
-//             return true;
-//         }
-//         solArr[x][y]=0;
-//         return false;
-//     }
-//     return false;
-// }
-// int main(){
-//     int n;
-//     cin>>n;
-//     int** arr=new int*[n];
-//     for(int i=0; i<n; i++){
-//         arr[i]=new int[n];
-//     }
-//     for(int i=0; i<n; i++){
-//         for(int j=0; j<n; j++){
-//             cin>>arr[i][j];
-//         }
-//     }
-//     int** solArr=new int*[n];
-//     for(int i=0; i<n; i++){
-//         solArr[i] = new int[n];
-//         for(int j=0; j<n; j++){
-//             solArr[i][j]=0;
-//         }
-//     }
-//     if(ratinMaze(arr, 0, 0, n, solArr)){
-//         for(int i=0; i<n; i++){
-//         for(int j=0; j<n; j++){
-//             cout<<solArr[i][j]<<" ";
-//         }
-//         cout<<endl;
-//         }
-//     }
+// class Main{
+//     public static void main(String args[]){
+//     Scanner sc=new Scanner(System.in);
+//     int n=sc.nextInt();
+//     if(n%2!=0)
+//     System.out.println("Enter valid number");
 //     else{
-//         cout<<"Solution doesn't exist";
-//     }
-//     return 0;
-// }
-
-
-
-
-//       LCS
-
-// #include<iostream>
-// #include<cstring>
-// using namespace std;
-// int find(string s1,string s2){
-//     int l1=s1.length();
-//     int l2=s2.length();
-//     int dp[l1+1][l2+1];
-//     for(int i=0;i<=l1;i++){
-//     for(int j=0;j<=l2;j++){
-//         if(i==0||j==0)
-//         dp[i][j]=0;
-//         else if(s1[i-1]==s2[j-1])
-//         dp[i][j]=dp[i-1][j-1]+1;
-//         else          
-//   dp[i][j]=max(dp[i-1][j],dp[i][j-1]); 
+//         int a[]=new int[n];
+//         int sumO=0,sumE=0;
+//         for(int i=0;i<n;i++){
+//             a[i]=sc.nextInt();
+//            if(i%2!=0)
+//            sumO+=sumO;
+//            else
+//            sumE+=sumE;
+//         }
+//         if(sumE>sumO){
+//             int d=0;int b[]=new int[n/2];
+//             for(int i=0;i<n;i++){
+//                 if(i%2==0)
+//                 b[d++]=a[i];
+//             }
+//             B obj=new B();
+//             obj.sum(d,b);
+//         }
+//         else{
+//             int d=0;int b[]=new int[n/2];
+//             for(int i=0;i<n;i++){
+//                 if(i%2!=0)
+//                 b[d++]=a[i];
+//             }
+//             B obj=new B();
+//             obj.sum(d,b);
 //         }
 //     }
-//     return dp[l1][l2];
 // }
-// int main(){
-//     string s1,s2;
-//     cin>>s1>>s2;
-//     int lcslength=find(s1,s2);
-//     cout<<lcslength<<endl;
-//     return 0;
 // }
 
+// 9) BIRDS
 
-// levenshtein distance
-
-// #include<iostream>
-// #include<cstring>
-// using namespace std;
-// int minimum(int a,int b,int c){
-//     return min(min(a,b),c);
-// }
-// int distance(string str1,string str2){
-//     int m=str1.length();
-//     int n=str2.length();
-//     int dp[m+1][n+1];
-//     for(int i=0;i<=m;i++){
-//         for(int j=0;j<=n;j++){
-//             if(i==0){
-//                 dp[i][j]=j;
-//             }
-//             else if(j==0){
-//                 dp[i][j]=i;
-//             }
-//             else if(str1[i-1]==str2[j-1]){
-//                 dp[i][j]=dp[i-1][j-1];
-//             }
-//             else{
-//                 dp[i][j]=1+minimum(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
-//             }
-            
-//         }
-//     }
-//     return dp[m][n];
-// }
-// int main(){
-//     string str1,str2;
-//     cin>>str1>>str2;
-//     int d=distance(str1,str2);
-//     cout<<d<<endl;
-// }
-
-
-
-// segment tree
-
-// #include<iostream>
-// #include<vector>
-// #include<climits>
-// using namespace std;
-// void buildTree(vector<int> &arr,vector<int>&tree,int start,int end,int node)
+// import java.util.*;
+// class Birds
 // {
-//     if(start==end){
-//         tree[node]=arr[start];
-//         return;
-//     }
-    
-//     int mid=(start+end)/2;
-//     buildTree(arr,tree,start,mid,2*node+1);
-//     buildTree(arr,tree,mid+1,end,2*node+2);
-    
-//     tree[node]=min(tree[2*node+1],tree[2*node+2]);
-// }
-// int query(vector<int> &tree,int start,int end,int node,int L,int R){
-//     if(L>end || R<start)
-//         return INT_MAX;
-    
-//     if(L<=start && R>=end)
-//         return tree[node];
-        
-//     int mid=(start+end)/2;
-//     int leftMin=query(tree,start,mid,2*node+1,L,R);
-//     int rightMin=query(tree,mid+1,end,2*node+2,L,R);
-    
-//     return min(leftMin,rightMin);
-// }
-// int main()
-// {
-//     int n;
-//     cin>>n;
-//     vector<int>arr(n);
-//     for(int i=0;i<n;i++)
-//         cin>>arr[i];
-//     vector<int>tree(4*n);
-//     buildTree(arr,tree,0,n-1,0);
-    
-//  int L,R;
-//     cin>>L>>R;
-    
-//     int minVal=query(tree,0,n-1,0,L,R);
-//     cout<<"Minimum of values in range ["<<L<<", "<<R<<"] is = "<<minVal;
-//     return 0;
-// }
-
-
-
-
-
-
-// sparse tree
-
-// #include<iostream>
-// #include<vector>
-// #include<climits>
-// using namespace std;
-// void buildTree(vector<int> &arr,vector<int>&tree,int start,int end,int node)
-// {
-//     if(start==end){
-//         tree[node]=arr[start];
-//         return;
-//     }
-    
-//     int mid=(start+end)/2;
-//     buildTree(arr,tree,start,mid,2*node+1);
-//     buildTree(arr,tree,mid+1,end,2*node+2);
-    
-//     tree[node]=min(tree[2*node+1],tree[2*node+2]);
-// }
-// int query(vector<int> &tree,int start,int end,int node,int L,int R){
-//     if(L>end || R<start)
-//         return INT_MAX;
-    
-//     if(L<=start && R>=end)
-//         return tree[node];
-        
-//     int mid=(start+end)/2;
-//     int leftMin=query(tree,start,mid,2*node+1,L,R);
-//     int rightMin=query(tree,mid+1,end,2*node+2,L,R);
-    
-//     return min(leftMin,rightMin);
-// }
-// int main()
-// {
-//     int n;
-//     cin>>n;
-//     vector<int>arr(n);
-//     for(int i=0;i<n;i++)
-//         cin>>arr[i];
-//     vector<int>tree(4*n);
-//     buildTree(arr,tree,0,n-1,0);
- 
-//     int L,R;
-//     cin>>L>>R;
-    
-//     int minVal=query(tree,0,n-1,0,L,R);
-//     cout<<"Minimum of values in range ["<<L<<", "<<R<<"] is = "<<minVal;
-//     return 0;
-// }
-
-
-//  floyd
-
-// #include<iostream>
-// using namespace std;
-// int INF=99999;
-// int V;
-// void FW(int **graph)
-// {
-//     int dist[V][V],i,j,k;
-//     for(int i=0;i<V;i++)
+//     Birds()
 //     {
-//         for(j=0;j<V;j++)
+//         System.out.print("Birds: ");
+//     }
+// }
+// class Parrot extends Birds
+// {
+//     Parrot()
+//     {
+//         System.out.println("Grey Parrot");
+//     }
+// }
+// class Cocktail extends Parrot
+// {
+//     Cocktail()
+//     {
+//         System.out.println("Grey Cocoktail");
+//     }
+// }
+// class Kiwi extends Cocktail
+// {
+//     Kiwi()
+//     {
+//         System.out.println("Grey Kiwi");
+//     }
+// }
+// class main
+// {
+//     public static void main(String[] args)
+//     {
+//         Scanner ob=new Scanner(System.in);
+//         String s=ob.nextLine();
+//         if(s.equals("Parrot"))
 //         {
-//             dist[i][j]=graph[i][j];
+//             Parrot p=new Parrot();
+//         }
+//         else if(s.equals("Cocktail"))
+//         {
+//             Cocktail c=new Cocktail();
+//         }
+//         else if(s.equals("Kiwi"))
+//         {
+//           Kiwi k=new Kiwi();
 //         }
 //     }
-//     for(k=0;k<V;k++)
+// }
+
+// 10) ITERATOR
+
+// import java.util.*;
+// class Main
+// {
+//     public static void main(String[] args)
 //     {
-//        for(int i=0;i<V;i++)
+//         Scanner sc=new Scanner(System.in);
+//         ArrayDeque<Integer> a=new ArrayDeque<Integer>();
+//         a.add(sc.nextInt());
+//         a.add(sc.nextInt());
+//         a.add(sc.nextInt());
+//         a.add(sc.nextInt());
+//         a.add(sc.nextInt());
+//         a.removeLast();
+//         Iterator<Integer> i=a.iterator();
+//         while(i.hasNext())
+//         {
+//             System.out.println(i.next());
+//         }
+//     }
+// }
+
+// 11)  square, modulus, and division
+
+// import java.util.*;
+// class Mathematics
+// {
+//     public void calculate(int x)
+//     {
+//         System.out.println("Square of "+x+": "+(x*x));
+//     }
+//     public void calculate(int x, int y)
+//     {
+//         System.out.println("Modulus of "+x+", "+y+": "+(x%y));
+//     }
+//     public void calculate(float m, float n)
+//     {
+//         System.out.println("Quotient of "+m+", "+n+": "+(m/n));
+//     }
+// }
+// class Main
+// {
+//     public static void main(String[] args)
+//     {
+//         Scanner ob=new Scanner(System.in);
+//         int a=ob.nextInt();
+//         int b=ob.nextInt();
+//         float c=ob.nextFloat();
+//         float d=ob.nextFloat();
+//         Mathematics obj=new Mathematics();
+//         obj.calculate(a);
+//         obj.calculate(a,b);
+//         obj.calculate(c,d);
+//     }
+// }
+
+// 12) Bank
+// import java.util.*;
+// abstract class Bank
+// {
+//        public void getBalance()
 //        {
-//           for(j=0;j<V;j++)
-//           {
-//               if(dist[i][j]>dist[i][k]+dist[k][j])
-              
-//               dist[i][j]=dist[i][k]+dist[k][j];
-//           }
+
 //        }
-//     }
-//     cout<<"\nShortest path matrix"<<endl;
-//     for(int i=0;i<V;i++)
-//     {
-//         for(j=0;j<V;j++)
-//         {
-//             if(dist[i][j]==INF)
-//             cout<<"INF"<<" ";
-//             else
-//             cout<<dist[i][j]<<" ";
-//         }
-//         cout<<endl;
-//     }
 // }
-// nt main()
+// class BankA extends Bank
 // {
-//     int E,source,destn,value;
-//     cin>>V>>E;
-//     int **graph=new int *[V];
-//     for(int i=0;i<V;i++)
+// 	void getBalance(int n)
 //     {
-//         graph[i]=new int[V];
+//         System.out.println("Deposited Balance is = "+n);
 //     }
-//     for(int i=0;i<V;i++)
+// }
+// class BankB extends Bank
+// {
+//     void getBalance(int n)
 //     {
-//         for(int j=0;j<V;j++)
-//         {
-//             if(i==j)
-//             {
-//                 graph[i][j]=0;
-//             }
-//             else
-//             {
-//                 graph[i][j]=INF;
-//             }
-//         }
+//         System.out.println("Deposited Balance is = "+n);
 //     }
-//     for(int i=0;i<E;i++)
+// }
+// class BankC extends Bank
+// {
+//     void getBalance(int n)
 //     {
-//         cin>>source;
-//         cin>>destn;
-//         cin>>value;
-//         graph[source][destn]=value;
-//         graph[destn][source]=value;
+//         System.out.println("Deposited Balance is = "+n);
 //     }
-//     cout<<"Original matrix"<<endl;
-//     for(int i=0;i<V;i++)
+
+// }
+// class Main
+// {
+//   public static void main(String[] args)
 //     {
-//         for(int j=0;j<V;j++)
-//         {
-//             if(graph[i][j]==INF)
-//             {
-//                 cout<<"INF";
-//             }
-// else
-//             {
-//                 cout<<graph[i][j]<<" ";
-//             }
-//         }
-//         cout<<endl;
-//     }
-//     FW(graph);
+//        int amt1,amt2,amt3;
+//        Scanner s =  new Scanner(System.in);
+//        amt1=s.nextInt();
+//        amt2=s.nextInt();
+//        amt3=s.nextInt();
+//        BankA Balance1 = new BankA();
+//        Balance1.getBalance(amt1);
+//        BankB Balance2 = new BankB();
+//        Balance2.getBalance(amt2);
+//        BankC Balance3 = new BankC();
+//        Balance3.getBalance(amt3);
+
+//    }
+
 // }
 
+// 13)  GPA BILL
 
+// int sid;
+// String sname;
+// String dname;
+// String address;
+// int gpa;
 
+// import java.sql.*;
+// import java.util.Scanner;
+// class JDBCExample {
+//    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+//    static final String DB_URL = "jdbc:mysql://localhost/ri_db";
 
+//    static final String USER = "test";
+//    static final String PASS = "test123";
 
-// Prim's algorithm
+//    public static void main(String[] args) {
+//    Connection conn = null;
+//    Connection myConn = null;
+//    Statement stmt = null;
+//    PreparedStatement st = null;
+//    try{
+//       Class.forName("com.mysql.jdbc.Driver");
+//       conn = DriverManager.getConnection(DB_URL, USER, PASS);
+//       stmt = conn.createStatement();
+//       String sql;
+//       Scanner sc =new Scanner(System.in);
+//       int n=Integer.parseInt(sc.nextLine());
+//       for(int i=0;i<n;i++) {
+//     	int sid =Integer.parseInt(sc.nextLine());
+//     	String sname =sc.nextLine();
+//     	String dname =sc.nextLine();
+//     	String address =sc.nextLine();
+//     	double gpa =Double.parseDouble(sc.nextLine());
+//         sql = "insert into BILL (sid,sname,dname,address,gpa) values(?,?,?,?,?)";
+//         st = conn.prepareStatement(sql);
 
-// #include <iostream>
-// #include <vector>
-// #include <climits>
-// using namespace stdd
-// const int INF = INT_MAX;
-// int minKey(vector<int>& key, vector<bool>& mstSet, int V) {
-//     int min = INF;
-//     int minIndex = -1;
-//     for (int v = 0; v < V; v++) {
-//         if (!mstSet[v] && key[v] < min) {
-//             min = key[v];
-//             minIndex = v;
-//         }
-//     }
-//     return minIndex;
-// }
-// void printMST(vector<int>& parent, vector<vector<int>>& graph, int V) {
-//     cout << "Output" << endl;
-//     for (int i = 1; i < V; i++) {
-//         cout << parent[i] << " " << i << " " << graph[i][parent[i]] << endl;
-//     }
-// }
+//         st.setInt(1, sid);
+//         st.setString(2, sname);
+//         st.setString(3, dname);
+//         st.setString(4, address);
+//         st.setDouble(5, gpa);
 
-// void primMST(vector<vector<int>>& graph, int V) {
-//     vector<int> parent(V);  
-//     vector<int> key(V);     
-//     vector<bool> mstSet(V, false);
-//  for (int i = 0; i < V; i++) {
-//         key[i] = INF;
-//         parent[i] = -1;
-//     }
-//     key[0] = 0;
-//     parent[0] = -1;
-//     for (int count = 0; count < V - 1; count++) {
-//         int u = minKey(key, mstSet, V);
-//         mstSet[u] = true;
-//         for (int v = 0; v < V; v++) {
-//             if (graph[u][v] && !mstSet[v] && graph[u][v] < key[v]) {
-//                 parent[v] = u;
-//                 key[v] = graph[u][v];
-//             }
-//         }
-//     }
-
-// printMST(parent, graph, V);
-// }
-
-// int main() {
-//     int V;
-//     cin >> V;
-
-//     vector<vector<int>> graph(V, vector<int>(V));
-
-//     for (int i = 0; i < V; i++) {
-//         for (int j = 0; j < V; j++) {
-//             cin >> graph[i][j];
-//         }
-//     }
-
-//     primMST(graph, V);
-
-//     return 0;
-// }
-
-
-// Dijikstra
-
-// #include<iostream>
-// #include<climits>
-// using namespace std;
-// const int v=5;
-// int mindis(int dist[],bool visited[]){
-//     int minindex=-1;
-//     int mindist=INT_MAX;
-//     for(int i=0;i<v;i++){
-//         if(!visited[i]&&dist[i]<=mindist){
-//         mindist=dist[i];
-//         minindex=i;
-//     }
-// }
-//     return minindex;
-// }
-// void print(int dist[]){
-//     cout<<"Vertex Distance from Source"<<endl;
-//     for(int i=0;i<v;i++){
-//         cout<<i<<" "<<dist[i]<<endl;
-//     }
-// }
-// void dijk(int graph[v][v],int source){
-//     int dist[v];bool visited[v];
-//     for(int i=0;i<v;i++){
-//     dist[i]=INT_MAX;
-//     visited[i]=false;
-//     }
-//     dist[source]=0;
-//     for(int i=0;i<v-1;i++){
-//         int u=mindis(dist,visited);
-//         visited[u]=true;
-//     for(int j=0;j<v;j++){
-//       if(!visited[j]&&graph[u][j]&&dist[u]!=INT_MAX&&dist[u]+graph[u][j]<dist[j]){
-//           dist[j]=dist[u]+graph[u][j];
+//         st.execute();
 //       }
-//     }
-//     }
-//     print(dist);
+
+//     String search = sc.nextLine();
+//      sql= "SELECT * FROM BILL Where DNAME='"+search+"'";
+//      ResultSet rs = stmt.executeQuery(sql);
+//      int count=0;
+//      while (rs.next())
+//       {
+//          count++;
+//         int sid = rs.getInt("SID");
+//         String sName = rs.getString("SNAME");
+//         String dName = rs.getString("DNAME");
+//         String address =    rs.getString("ADDRESS");
+//         double gpa =rs.getDouble("GPA");
+//         System.out.format("%s %s %s %s %s\n", sid, sName, dName, address,gpa);
+//       }
+//       if(count==0)
+//         System.out.println("No students in "+search+" department");
+
+//    }catch(SQLException se){
+
+//       se.printStackTrace();
+//    }catch(Exception e){
+
+//       e.printStackTrace();
+//    }finally{
+
+//       try{
+//          if(stmt!=null)
+//             conn.close();
+//       }catch(SQLException se){
+//       }
+//       try{
+//          if(conn!=null)
+//             conn.close();
+//       }catch(SQLException se){
+//          se.printStackTrace();
+//       }
+//    }
+
 // }
-// int main(){
-//     int graph[v][v],source;
-//     for(int i=0;i<v;i++){
-//     for(int j=0;j<v;j++){
-//         cin>>graph[i][j];
-//     }
-//     }
-//     cin>>source;
-//     dijk(graph,source);
-//     return 0;
 // }
 
+// 14)SALARAY RANGE 10000 AND 50000
 
-// kruskal
-
-// // You are using GCC
-// #include <iostream>
-// #include <vector>
-// #include <algorithm>
-// using namespace std;
-// struct Edge {
-//     int src, dest, weight;
-// };
-// bool compareEdges(Edge a, Edge b) {
-//     return a.weight < b.weight;
+// import java.util.*;
+// import java.sql.*;
+// class Main{
+// public static void main(String args[])throws Exception{
+//     Scanner sc=new Scanner(System.in);
+//     Class.forName("com.mysql.jdbc.Driver");
+//     String url="jdbc:mysql://localhost/ri_db";
+//     String username="test";
+//     String  password="test123";
+//     String query="INSERT INTO OFFICE(EID,ENAME,ESALARY)VALUES(?,?,?);";
+//     Connection con=DriverManager.getConnection(url,username,password);
+//     PreparedStatement st=con.prepareStatement(query);
+//    int n=Integer.parseInt(sc.nextLine());
+//     for(int i=0;i<n;i++){
+//    int eid=Integer.parseInt(sc.nextLine());
+//     String ename=sc.nextLine();
+//    int esalary=sc.nextInt();
+//     st.setInt(1,eid);
+//     st.setString(2,ename);
+//     st.setInt(3,esalary);
+//     st.executeUpdate();
+//     }
+//     ResultSet rs=st.executeQuery("select * from OFFICE where esalary between 10000 and 50000");
+//     while(rs.next()){
+//     System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+//     }
+//     st.close();
+//     con.close();
 // }
-// class Graph {
-// public:
-//     int V, E;
-//     vector<Edge> edges;
-//     Graph(int v, int e) : V(v), E(e) {
-//         edges.resize(E);
-//     }
-//     void addEdge(int src, int dest, int weight) {
-//         edges.push_back({src, dest, weight});
-//     }
-//     void kruskalMST() {
-//         vector<Edge> result;
-//         vector<int> parent(V);
-//         for (int i = 0; i < V; i++) {
-//             parent[i] = i;
+// }
+
+//  15)toArray()
+
+// import java.util.*;
+// class Main
+// {
+//     public static void main(String[] args)
+//     {
+//         Scanner sc=new Scanner(System.in);
+//         ArrayList<String> al=new ArrayList<String>();
+//         int n=sc.nextInt();
+//         for(int i=0;i<n;i++)
+//         {
+//             al.add(sc.next());
 //         }
-//         sort(edges.begin(), edges.end(), compareEdges);
-//         for (Edge edge : edges) {
-//             int rootSrc = find(parent, edge.src);
-//             int rootDest = find(parent, edge.dest);
-//             if (rootSrc != rootDest) {
-//                 result.push_back(edge);
-//                 unionSets(parent, rootSrc, rootDest);
+//         String[] s=al.toArray(new String[n]);
+//         for(String k:s)
+//         {
+//             System.out.println(k);
+//         }
+//     }
+// }
+
+// 16)  INDEX X LINKED LIST
+
+// import java.util.*;
+// class Main {
+//     public static void main(String args[])
+//     {
+//         Scanner sc=new Scanner(System.in);
+//         int n=Integer.parseInt(sc.nextLine());
+//         LinkedList<String> l=new LinkedList<String>();
+//         for(int i=0;i<n;i++)
+//         l.add(sc.nextLine());
+//         int rem=Integer.parseInt(sc.nextLine());
+//         l.remove(rem-1);
+//         Iterator<String> it=l.iterator();
+//         while(it.hasNext())
+//         System.out.println(it.next());
+//     }
+
+// 17)   EMAIL ADDRESS
+
+// import java.util.Scanner;
+// import java.io.*;
+// class DotException extends Exception
+// {
+//     public DotException(String str)
+//     {
+//         super(str);
+//     }
+// }
+// class AtTheRateException extends Exception
+// {
+//     public AtTheRateException(String str)
+//     {
+//         super(str);
+//     }
+// }
+// class DomainException extends Exception
+// {
+//     public DomainException(String str)
+//     {
+//         super(str);
+//     }
+// }
+// class Main
+// {
+//     public static void main(String args[])
+//     {
+//         Scanner scan = new Scanner(System.in);
+//         String str = scan.nextLine();
+
+//         try
+//         {
+//             int dot=0,atRate=0;
+//             for(int i=0;i<str.length();i++)
+//             {
+//                 if(str.charAt(i)=='.')
+//                     dot++;
+//                 if(str.charAt(i)=='@')
+//                     atRate++;
+//             }
+
+//             if(dot!=1)
+//             {
+//                 throw new DotException("Invalid Dot usage");
+//             }
+//             if(atRate!=1)
+//             {
+//                 throw new AtTheRateException("Invalid @ usage");
+//             }
+//             if(!(str.contains("in") || str.contains("com") || str.contains("net") || str.contains("biz")))
+//             {
+//                 throw new DomainException("Invalid Domain");
+//             }
+//             System.out.print("Valid email address");
+//         }
+//         catch(DotException e)
+//         {
+//             System.out.print(e);
+//             System.out.print("\nInvalid email address");
+//         }
+//         catch(AtTheRateException e)
+//         {
+//             System.out.print(e);
+//             System.out.print("\nInvalid email address");
+//         }
+//         catch(DomainException e)
+//         {
+//             System.out.print(e);
+//             System.out.print("\nInvalid email address");
+//         }
+//     }
+// }
+
+//   18)ArrayIndexOutOfBoundsException
+// import java.util.Scanner;
+// class Main
+// {
+//     public static void main(String args[])
+//     {
+//         Scanner scan = new Scanner(System.in);
+//         int n = scan.nextInt();
+//         int arr[] = new int[n];
+//         for(int i=0;i<n;i++)
+//             arr[i] = scan.nextInt();
+
+//         int ind = scan.nextInt();
+//         try
+//         {
+//             System.out.println(arr[ind]);
+//         }
+//         catch(ArrayIndexOutOfBoundsException e)
+//         {
+//             System.out.println("Array index out of bound.");
+//         }
+
+//         int a = scan.nextInt();
+//         int b = scan.nextInt();
+//         try
+//         {
+//             System.out.println(a/b);
+//         }
+//         catch(Exception e)
+//         {
+//             System.out.println(e);
+//         }
+
+//         String str = null;
+//         ind = scan.nextInt();
+//         System.out.println(str);
+//         try
+//         {
+//             System.out.println(str.charAt(ind));
+//         }
+//         catch(NullPointerException e)
+//         {
+//             System.out.println(e);
+//         }
+//     }
+// }
+
+// 19) "Eligible to vote".
+
+// import java.util.*;
+// import java.io.*;
+// class main
+// {
+//     public static void main(String[] args)
+//     {
+//         Scanner ob=new Scanner(System.in);
+//         int n=ob.nextInt();
+//         try
+//         {
+//            if (n < 18) {
+//                 throw new Exception("Not Eligible to vote");
+//             }
+//             else {
+//                 System.out.println("Eligible To Vote");
 //             }
 //         }
-//         int minimumCost = 0;
-//         cout << "Following are the edges in the constructed MST" << endl;
-//         for (Edge edge : result) {
-//             cout << edge.src << " -- " << edge.dest << " == " << edge.weight << endl;
-//             minimumCost += edge.weight;
+//         catch (Exception e) {
+//             System.out.println(e.getMessage());
+//             System.out.println("AgeException");
 //         }
-//         cout << "Minimum Cost Spanning Tree: " << minimumCost << endl;
 //     }
-// private:
-//     int find(vector<int>& parent, int node) {
-//         if (parent[node] == node)
-//             return node;
-//         return find(parent, parent[node]);
-//     }
-//     void unionSets(vector<int>& parent, int root1, int root2) {
-//         parent[root1] = root2;
-//     }
-// };
-// int main() {
-//     int V, E;
-//     cin >> V >> E;
-//     Graph graph(V, E);
-//     for (int i = 0; i < E; i++) {
-//         int src, dest, weight;
-//         cin >> src >> dest >> weight;
-//         graph.addEdge(src, dest, weight);
-//     }
-//     graph.kruskalMST();
-//     return 0;
 // }
+
+// 20) SCHOOL - CLASS SHAPE
+
+// import java.util.*;
+// class shape
+// {
+//     int a;
+//     int b;
+//     int c;
+//     shape(int a)
+//     {
+//         System.out.println(a*a);
+//     }
+//     shape(int b,int c)
+//     {
+//         System.out.println(b*c);
+//     }
+// }
+// class Main
+// {
+//     public static void main(String[] args)
+//     {
+//         Scanner in=new Scanner(System.in);
+//         int a=in.nextInt();
+//         int b=in.nextInt();
+//         int c=in.nextInt();
+//         shape s=new shape(a);
+//         shape s1=new shape(b,c);
+//     }
+// }
+
+// 21) FREQUENCY
+
+// import java.util.Scanner;
+
+// class Mythread extends Thread{
+// 	String str;
+// 	static int n;
+// 	public Mythread(String str) {
+// 		super();
+// 		this.str = str;
+// 	}
+
+// 	public void run() {
+// 		 n = this.str.length();
+// 		int[] freq = new int[26];
+
+// 		for (int i = 0; i < n; i++)
+//             freq[this.str.charAt(i) - 'a']++;
+
+//         for (int i = 0; i < n; i++) {
+//             if (freq[this.str.charAt(i) - 'a'] != 0) {
+//                 System.out.print(this.str.charAt(i));
+//                 System.out.print(freq[this.str.charAt(i) - 'a']);
+//                 System.out.println();
+//               freq[this.str.charAt(i) - 'a'] = 0;
+//             }
+// 	}
+
+// }
+// }
+// class MainThread{
+// 	public static void main(String args[]) {
+// 		Scanner sc =new Scanner(System.in);
+// 		int n=Integer.parseInt(sc.nextLine());
+// 		for(int i=0;i<n;i++) {
+// 			String str= sc.nextLine();
+// 			Mythread t2 =new Mythread(str);
+// 			t2.start();
+// 			System.out.println();
+// 		}
+
+// 	}
+// }
+
+// 22. studentdetails form
+
+// .java file code
+
+// import javax.swing.*;
+// import java.awt.event.*;
+
+// public class StudentDetailsForm extends JFrame {
+//     private JLabel nameLabel, regNoLabel, cgpaLabel, genderLabel;
+//     private JTextField nameField, regNoField, cgpaField;
+//     private JCheckBox maleCheckBox, femaleCheckBox;
+//     private JButton submitButton;
+
+//     public StudentDetailsForm() {
+//         setTitle("Student Details Form");
+//         setSize(400, 250);
+//         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//         setLayout(null);
+
+//         nameLabel = new JLabel("Name:");
+//         nameLabel.setBounds(50, 30, 80, 20);
+//         add(nameLabel);
+
+//         nameField = new JTextField();
+//         nameField.setBounds(150, 30, 200, 20);
+//         add(nameField);
+
+//         regNoLabel = new JLabel("Reg No:");
+//         regNoLabel.setBounds(50, 60, 80, 20);
+//         add(regNoLabel);
+
+//         regNoField = new JTextField();
+//         regNoField.setBounds(150, 60, 200, 20);
+//         add(regNoField);
+
+//         cgpaLabel = new JLabel("CGPA:");
+//         cgpaLabel.setBounds(50, 90, 80, 20);
+//         add(cgpaLabel);
+
+//         cgpaField = new JTextField();
+//         cgpaField.setBounds(150, 90, 200, 20);
+//         add(cgpaField);
+
+//         genderLabel = new JLabel("Gender:");
+//         genderLabel.setBounds(50, 120, 80, 20);
+//         add(genderLabel);
+
+//         maleCheckBox = new JCheckBox("Male");
+//         maleCheckBox.setBounds(150, 120, 80, 20);
+//         add(maleCheckBox);
+
+//         femaleCheckBox = new JCheckBox("Female");
+//         femaleCheckBox.setBounds(250, 120, 80, 20);
+//         add(femaleCheckBox);
+
+//         submitButton = new JButton("Submit");
+//         submitButton.setBounds(150, 160, 100, 30);
+//         add(submitButton);
+
+//         submitButton.addActionListener(new ActionListener() {
+//             @Override
+//             public void actionPerformed(ActionEvent e) {
+//                 String name = nameField.getText();
+//                 String regNo = regNoField.getText();
+//                 String cgpa = cgpaField.getText();
+//                 String gender = "";
+
+//                 if (maleCheckBox.isSelected() && !femaleCheckBox.isSelected()) {
+//                     gender = "Male";
+//                 } else if (!maleCheckBox.isSelected() && femaleCheckBox.isSelected()) {
+//                     gender = "Female";
+//                 } else {
+//                     gender = "Not specified";
+//                 }
+
+//                 String welcomeMessage = "Welcome, " + name + "!\n" +
+//                                         "Reg No: " + regNo + "\n" +
+//                                         "CGPA: " + cgpa + "\n" +
+//                                         "Gender: " + gender;
+
+//                 JOptionPane.showMessageDialog(null, welcomeMessage);
+//             }
+//         });
+//     }
+
+//     public static void main(String[] args) {
+//         StudentDetailsForm detailsForm = new StudentDetailsForm();
+//         detailsForm.setVisible(true);
+//     }
+// }
+
+// -------------------------------------------------------------------------------------
+
+// 23. trainerfeedback form
+
+// .java file code
+
+// import javax.swing.*;
+// import java.awt.*;
+// import java.awt.event.ActionEvent;
+// import java.awt.event.ActionListener;
+
+// public class TrainerFeedbackForm extends JFrame {
+//     private JCheckBox clarityCheckBox;
+//     private JCheckBox clarityCheckBox1;
+//     private JCheckBox doubtsCheckBox;
+//     private JCheckBox doubtsCheckBox1;
+//     private JCheckBox interactionCheckBox;
+//     private JCheckBox interactionCheckBox1;
+//     private JTextField ratingTextField;
+//     private JButton submitButton;
+
+//     public TrainerFeedbackForm() {
+//         setTitle("Trainer Feedback Form");
+//         setSize(400, 200);
+//         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//         setLayout(new GridLayout(5, 2));
+
+//         JLabel clarityLabel = new JLabel("Were the contents delivered clearly by the trainer?");
+//         clarityCheckBox = new JCheckBox("Yes");
+//         clarityCheckBox1 = new JCheckBox("No");
+//         add(clarityLabel);
+//         add(clarityCheckBox);
+//         add(clarityCheckBox1);
+
+//         JLabel doubtsLabel = new JLabel("Do the trainers clear all your doubts?");
+//         doubtsCheckBox = new JCheckBox("Yes");
+//         doubtsCheckBox1 = new JCheckBox("No");
+//         add(doubtsLabel);
+//         add(doubtsCheckBox);
+//         add(doubtsCheckBox1);
+
+//         JLabel interactionLabel = new JLabel("Do the trainers interact?");
+//         interactionCheckBox = new JCheckBox("Yes");
+//         interactionCheckBox1 = new JCheckBox("No");
+//         add(interactionLabel);
+//         add(interactionCheckBox);
+//         add(interactionCheckBox1);
+
+//         JLabel ratingLabel = new JLabel("Rate the trainer on a scale of 1 to 10:");
+//         ratingTextField = new JTextField();
+//         add(ratingLabel);
+//         add(ratingTextField);
+
+//         submitButton = new JButton("Submit");
+//         add(new JLabel()); // Placeholder
+//         add(submitButton);
+
+//         submitButton.addActionListener(new ActionListener() {
+//             @Override
+//             public void actionPerformed(ActionEvent e) {
+//                 // Retrieve user feedback and rating
+//                 clarityCheckBox.isSelected();
+//                 clarityCheckBox1.isSelected();
+//                 doubtsCheckBox.isSelected();
+//                 doubtsCheckBox1.isSelected();
+//                 interactionCheckBox.isSelected();
+//                 interactionCheckBox1.isSelected();
+//                 ratingTextField.getText();
+
+//                 // Process the feedback and rating as needed (e.g., store in a database)
+
+//                 // Show a confirmation dialog
+//                 JOptionPane.showMessageDialog(null, "Feedback submitted successfully.");
+
+//                 // Reset the form
+//                 clarityCheckBox.setSelected(false);
+//                 clarityCheckBox1.setSelected(false);
+//                 doubtsCheckBox.setSelected(false);
+//                 doubtsCheckBox1.setSelected(false);
+//                 interactionCheckBox.setSelected(false);
+//                 interactionCheckBox1.setSelected(false);
+//                 ratingTextField.setText("");
+//             }
+//         });
+//     }
+
+//     public static void main(String[] args) {
+//         SwingUtilities.invokeLater(new Runnable() {
+//             @Override
+//             public void run() {
+//                 TrainerFeedbackForm feedbackForm = new TrainerFeedbackForm();
+//                 feedbackForm.setVisible(true);
+//             }
+//         });
+//     }
+// }
+
+// ----------------------------------------------------------------------------------------------
+
+// 24. servlet 1 login page
+
+// .java file code
+
+// import java.io.IOException;
+// import java.io.PrintWriter;
+// import javax.servlet.GenericServlet;
+// import javax.servlet.ServletException;
+// import javax.servlet.ServletRequest;
+// import javax.servlet.ServletResponse;
+// import javax.servlet.annotation.WebServlet;
+// @WebServlet("/LoginServlet")
+// public class GenericServletApp1 extends GenericServlet{
+//     public void service(ServletRequest request,ServletResponse response)
+//     		throws ServletException,IOException
+//     {
+//         response.setContentType("text/html");
+//         PrintWriter out=response.getWriter();
+//         String s1=request.getParameter("uname");
+//         String s2=request.getParameter("pass");
+//         out.println("<h1>"+s1+"</h1>");
+//         out.println("<h1>"+s2+"</h1>");
+//         out.println("<h1>"+"The entered details are valid"+"<h2>");
+//         out.println("<a href='Index.html'>Back</a>");
+//         out.close();
+//     }
+// }
+
+// .html file code
+
+// <!DOCTYPE html>
+// <html>
+// <head>
+//     <title>Login Page</title>
+// </head>
+// <body>
+
+//     <form action="LoginServlet" method="post" style="margin-left: 40%;">
+// 		<table>
+// 			<tr>
+// 				<td colspan="2" style="text-align: center;"><h1>Login</h1></td>
+// 			</tr>
+// 			<tr>
+// 				<td>Enter UserName:</td>
+// 				<td><input type="text" name="uname"></td>
+// 			</tr>
+// 			<tr>
+// 				<td>Enter Password:</td>
+// 				<td><input type="password" name="pass"></td>
+// 			</tr>
+// 			<tr>
+// 				<td colspan="2" style="text-align: center;"><input type="submit" value="Click here to submit"></td>
+// 			</tr>
+// 		</table>
+
+//     </form>
+// </body>
+// </html>
+
+// ------------------------------------------------------------------------------------------------------------
+// 25. servlet 2 add two numbers
+
+// .java file code
+
+// import javax.servlet.*;
+// import java.io.*;
+// import javax.servlet.http.*;
+// import javax.servlet.annotation.WebServlet;
+// @WebServlet("/servadd")
+// public class ssadd extends HttpServlet{
+// 	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException,IOException
+// 	{
+// 	PrintWriter out = res.getWriter();
+// 	res.setContentType("text/html");
+// 	int a=Integer.parseInt(req.getParameter("t1"));
+// 	int b=Integer.parseInt(req.getParameter("t2"));
+// 	int c=a+b;
+// 	out.println("Sum of two numbers are "+c);
+// 	}
+// }
+
+// .html file code
+
+// <!DOCTYPE html>
+// <html>
+// <head>
+//     <title>Addition Page</title>
+// </head>
+// <body>
+
+// 		<form action="servadd" method ="get" style="margin-left: 40%">
+// 		<table>
+// 			<tr>
+// 				<td colspan="2" style="text-align: center;"><h1>Addition of two numbers</h1></td>
+// 			</tr>
+// 			<tr>
+// 				<td>Enter number 1:</td>
+// 				<td><input type="text" name="t1"></td>
+// 			</tr>
+// 			<tr>
+// 				<td>Enter number 2:</td>
+// 				<td><input type="text" name="t2"></td>
+// 			</tr>
+// 			<tr>
+// 				<td colspan="2" style="text-align: center;"><input type="submit" value="Click here to submit"></td>
+// 			</tr>
+// 		</table>
+
+//     </form>
+// </body>
+// </html>
